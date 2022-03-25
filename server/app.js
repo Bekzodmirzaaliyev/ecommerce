@@ -35,6 +35,11 @@ const customizeRouter = require("./routes/customize");
 // Import Auth middleware for check user login or not~
 const { loginCheck } = require("./middleware/auth");
 
+//config
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  require("dotenv").config({ path: "../env" });
+}
+
 // Database Connection
 mongoose
   .connect(process.env.DATABASE, {

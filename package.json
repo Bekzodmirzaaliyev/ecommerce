@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node /server/app.js",
-    "dev": "nodemon /server/app.js",
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "heroku-run-build-script": true,
