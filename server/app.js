@@ -18,7 +18,6 @@ go user model and see the role field.
 const express = require("express");
 const app = express();
 require("dotenv").config();
-
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
@@ -40,8 +39,13 @@ const customizeRouter = require("./routes/customize");
 const { loginCheck } = require("./middleware/auth");
 
 //config
-if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "../.env" });
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend', 'public', 'index.html'))
+  });
+
 }
 
 // Database Connection
@@ -54,9 +58,6 @@ mongoose
   .then(() =>
     console.log(
       "==============Mongodb Database Connected Successfully=============="
-    ),
-    console.log(
-      "==============#PROJECT BY BEKZOD MIRZAALIYEV#=============="
     )
   )
   .catch((err) => console.log("Database Not Connected !!!"));
