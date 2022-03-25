@@ -36,14 +36,14 @@ const customizeRouter = require("./routes/customize");
 const { loginCheck } = require("./middleware/auth");
 
 //config
-// if(process.env.NODE.ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+if(process.env.NODE.ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'))
-//   });
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'))
+  });
   
-// }
+}
 
 // Database Connection
 mongoose
