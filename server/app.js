@@ -24,8 +24,6 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const path = require('path');
 
-// console.log(__dirname);ini
-
 // Import Router
 const authRouter = require("./routes/auth");
 const categoryRouter = require("./routes/categories");
@@ -42,8 +40,8 @@ const { loginCheck } = require("./middleware/auth");
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend', 'public', 'index.html'))
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'))
   });
 
 }
@@ -58,7 +56,10 @@ mongoose
   .then(() =>
     console.log(
       "==============Mongodb Database Connected Successfully=============="
+    ),console.log(
+      "==============PROJECT BY BEKZOD MIRZAALIYEV=============="
     )
+    
   )
   .catch((err) => console.log("Database Not Connected !!!"));
 
