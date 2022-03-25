@@ -6,6 +6,10 @@
   "engines": {
     "node": "16.x"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/app.js",
@@ -27,6 +31,7 @@
     "bcryptjs": "^2.4.3",
     "braintree": "^3.0.0",
     "cookie-parser": "^1.4.5",
+    "core.js": "^0.4.2",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
     "dotenv": "^8.2.0",
