@@ -22,6 +22,9 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const path = require('path');
+
+// console.log(__dirname);ini
 
 // Import Router
 const authRouter = require("./routes/auth");
@@ -36,13 +39,13 @@ const customizeRouter = require("./routes/customize");
 const { loginCheck } = require("./middleware/auth");
 
 //config
-if(process.env.NODE.ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'))
   });
-  
+
 }
 
 // Database Connection
