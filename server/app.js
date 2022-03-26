@@ -22,7 +22,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const path = require('path');
+const path = require("path")
 
 // Import Router
 const authRouter = require("./routes/auth");
@@ -35,33 +35,15 @@ const customizeRouter = require("./routes/customize");
 
 // Import Auth middleware for check user login or not~
 const { loginCheck } = require("./middleware/auth");
-
-//config
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'frontend', 'build')));
-
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'))
-  });
-
-}
+const connectDataBase = require('./config/db');
 
 // Database Connection
-mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then(() =>
-    console.log(
-      "==============Mongodb Database Connected Successfully=============="
-    ),console.log(
-      "==============PROJECT BY BEKZOD MIRZAALIYEV=============="
-    )
-    
-  )
-  .catch((err) => console.log("Database Not Connected !!!"));
+connectDataBase();
+
+  // Config
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  require("dotenv").config({ path: "backend/config/config.env" });
+}
 
 // Middleware
 app.use(morgan("dev"));
@@ -79,6 +61,13 @@ app.use("/api/product", productRouter);
 app.use("/api", brainTreeRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
+
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
+
 
 // Run Server
 const PORT = process.env.PORT || 8000;
