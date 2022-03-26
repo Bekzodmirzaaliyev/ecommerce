@@ -70,7 +70,7 @@ app.get("*", (req, res) => {
 
 
 // Run Server
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 54323;
 app.listen(PORT, () => {
   console.log("Server is running on ", PORT);
 });
