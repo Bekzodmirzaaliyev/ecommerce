@@ -70,7 +70,11 @@ app.get("*", (req, res) => {
 
 
 // Run Server
+<<<<<<< Updated upstream
 const PORT = process.env.PORT || 8009;
+=======
+const PORT = process.env.PORT || 8154;
+>>>>>>> Stashed changes
 app.listen(PORT, () => {
   console.log("Server is running on ", PORT);
 });
