@@ -4,6 +4,9 @@ import { getAllProduct } from "../../admin/products/FetchApi";
 import { HomeContext } from "./index";
 import { isWishReq, unWishReq, isWish } from "./Mixins";
 
+import './style.css';
+
+
 const apiURL = process.env.REACT_APP_API_URL;
 
 const SingleProduct = (props) => {
@@ -16,11 +19,16 @@ const SingleProduct = (props) => {
     JSON.parse(localStorage.getItem("wishList"))
   );
 
+  const [noOfElement, setOfElement] = useState(8);
+
+  const loadMoreBtn = () => {
+      setOfElement(noOfElement + noOfElement);
+  }
+
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const fetchData = async () => {
     dispatch({ type: "loading", payload: true });
     try {
@@ -38,7 +46,7 @@ const SingleProduct = (props) => {
 
   if (data.loading) {
     return (
-      <div className="col-span-2 md:col-span-3 lg:col-span-4 flex items-center justify-center py-24">
+      <div>
         <svg
           className="w-12 h-12 animate-spin text-gray-600"
           fill="none"
@@ -58,8 +66,9 @@ const SingleProduct = (props) => {
   }
   return (
     <Fragment>
+      <div className="m-4 md:mx-8 md:my-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> 
       {products && products.length > 0 ? (
-        products.map((item, index) => {
+        products && Array.isArray(products) && products.slice(0, noOfElement).map((item, index) => {
           return (
             <Fragment key={index}>
               <div className="relative col-span-1 m-2">
@@ -142,6 +151,16 @@ const SingleProduct = (props) => {
           No product found
         </div>
       )}
+      </div>
+      <Fragment>
+        <button 
+          type='button'
+          className='btn btn-loadmore w-full'
+          onClick={() => loadMoreBtn()}
+        >
+          Load More
+        </button>
+      </Fragment>
     </Fragment>
   );
 };
