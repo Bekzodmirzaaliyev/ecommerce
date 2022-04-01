@@ -59,8 +59,10 @@ const Slider = (props) => {
         </svg>
         <div className="absolute inset-0 flex items-end mb-10 justify-center">
           <h1
-            style={{ border: "#fff 1px solid" }}
-            className="cursor-pointer box-border text-xl text-white px-2 py-1 rounded"
+            style={{ 
+              border: "#b7791f 1px solid", 
+              color: "#b7791f" }}
+            className="cursor-pointer box-border text-xl  px-2 py-1 rounded"
           >
             Ecommerce Top Brands
           </h1>

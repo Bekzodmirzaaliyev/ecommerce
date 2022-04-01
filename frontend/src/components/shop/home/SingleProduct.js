@@ -74,8 +74,7 @@ const SingleProduct = (props) => {
               <div className="relative col-span-1 m-1">
                 <img
                   onClick={(e) => history.push(`/products/${item._id}`)}
-                  className="w-full object-cover object-center cursor-pointer"
-                  style={{height: "290px"}}
+                  className="w-full object-cover object-center cursor-pointer card-image"
                   src={`${apiURL}/uploads/products/${item.pImages[0]}`}
                   alt=""
                 />
