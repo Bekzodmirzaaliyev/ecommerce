@@ -92,7 +92,7 @@
   }
 }
 @media screen and (max-height: 1080px){
-  .image-slide {
+  .slider-img {
     height: 54vh;
   }
 }
