@@ -70,6 +70,10 @@
   box-shadow: 1px 2px 15px 6px #303031b3;
 }
 
+.mt-button-svg {
+  margin-top: 33rem;
+}
+
 @media screen and (max-width: 425px){
   .btn {
       font-size: 1rem;
@@ -94,6 +98,10 @@
 @media screen and (max-width: 425px){
   .slider-img {
     height: 60vh;
+  }
+  
+  .mt-button-svg {
+    margin-top: 19rem;
   }
 }
 
