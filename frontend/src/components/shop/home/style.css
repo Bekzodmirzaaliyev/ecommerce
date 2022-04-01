@@ -71,10 +71,10 @@
 }
 
 .mt-button-svg {
-  margin-top: 33rem;
+  margin-top: 29rem;
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 425px) and (max-height: ()){
   .btn {
       font-size: 1rem;
   }
@@ -84,24 +84,13 @@
       background-color: #303031;
   }
 }
-
-@media screen and (max-width: 425px){
-  .btn {
-    font-size: 1rem;
-  }
-  
-  .btn-loadmore {
-    color: #fff;
-    background-color: #303031;
-  }
-}
-@media screen and (max-width: 425px){
+@media screen and (max-width: 425px) and (max-height: 900px) {
   .slider-img {
     height: 60vh;
   }
   
   .mt-button-svg {
-    margin-top: 19rem;
+    margin-top: 15.5rem;
   }
 }
 
