@@ -66,7 +66,7 @@ const SingleProduct = (props) => {
   }
   return (
     <Fragment>
-      <div className="m-4 md:mx-8 md:my-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> 
+      <div className="m-4 md:mx-5 md:my-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> 
       {products && products.length > 0 ? (
         products && Array.isArray(products) && products.slice(0, noOfElement).map((item, index) => {
           return (
