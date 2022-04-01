@@ -17,7 +17,7 @@ const Slider = (props) => {
 
   return (
     <Fragment>
-      <div className="relative bg-gray-100 border-2">
+      <div className="relative bg-gray-100">
         {data.sliderImages.length > 0 ? (
           <img
             className="w-full slider-img"

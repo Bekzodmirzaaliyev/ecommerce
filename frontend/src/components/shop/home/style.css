@@ -80,3 +80,20 @@
       background-color: #303031;
   }
 }
+
+@media screen and (max-width: 425px){
+  .btn {
+    font-size: 1rem;
+  }
+  
+  .btn-loadmore {
+    color: #fff;
+    background-color: #303031;
+  }
+}
+@media screen and (max-height: 1080px){
+  .image-slide {
+    height: 54vh;
+  }
+}
+
