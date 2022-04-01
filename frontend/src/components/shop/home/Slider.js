@@ -20,7 +20,7 @@ const Slider = (props) => {
       <div className="relative bg-gray-100">
         {data.sliderImages.length > 0 ? (
           <img
-            className="w-full slider-img"
+            className="w-full object-cover object-center slider-img"
             src={`${apiURL}/uploads/customize/${data.sliderImages[slide].slideImage}`}
             alt="sliderImage"
           />
