@@ -71,7 +71,7 @@ const SingleProduct = (props) => {
         products && Array.isArray(products) && products.slice(0, noOfElement).map((item, index) => {
           return (
             <Fragment key={index}>
-              <div className="relative col-span-1 m-2">
+              <div className="relative col-span-1 m-1">
                 <img
                   onClick={(e) => history.push(`/products/${item._id}`)}
                   className="w-full object-cover object-center cursor-pointer"

@@ -74,6 +74,24 @@
   margin-top: 29rem;
 }
 
+@media (max-width: 991px) {
+  .card {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+  }
+}
+
 @media screen and (max-width: 425px) and (max-height: ()){
   .btn {
       font-size: 1rem;
