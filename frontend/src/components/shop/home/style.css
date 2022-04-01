@@ -91,9 +91,9 @@
     background-color: #303031;
   }
 }
-@media screen and (max-height: 1080px){
+@media screen and (max-width: 425px){
   .slider-img {
-    height: 54vh;
+    height: 60vh;
   }
 }
 
