@@ -57,14 +57,13 @@ const Slider = (props) => {
             d="M9 5l7 7-7 7"
           />
         </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <a
-            href="#shop"
-            style={{ background: "#303031" }}
-            className="cursor-pointer box-border text-2xl text-white px-4 py-2 rounded"
+        <div className="absolute inset-0 flex items-end mb-10 justify-center">
+          <h1
+            style={{ border: "#fff 1px solid" }}
+            className="cursor-pointer box-border text-xl text-white px-2 py-1 rounded"
           >
-            Shop Now
-          </a>
+            Ecommerce Top Brands
+          </h1>
         </div>
       </div>
       <OrderSuccessMessage />
